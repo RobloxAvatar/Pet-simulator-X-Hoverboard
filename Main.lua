@@ -1,6 +1,9 @@
 getgenv().bind = "q" --// choose a keybind
 getgenv().bordToggled = false --// dont change this
 
+local gmppath = require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Gamepasses"])
+gmppath.Owns = function() return true end
+
 game:GetService("UserInputService").InputBegan:Connect(function(i)
     if i.KeyCode == Enum.KeyCode[string.upper(getgenv().bind)] then
         if getgenv().bordToggled == false then
