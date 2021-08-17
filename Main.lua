@@ -1,6 +1,8 @@
 getgenv().bind = "q" --// choose a keybind
 getgenv().bordToggled = false --// dont change this
 
+if syn then
+
 local gmppath = require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Gamepasses"])
 gmppath.Owns = function() return true end
 
@@ -25,3 +27,4 @@ game:GetService("UserInputService").InputBegan:Connect(function(i)
         end
     end
 end)
+end
